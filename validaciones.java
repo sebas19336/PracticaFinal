@@ -54,4 +54,44 @@ public class validaciones {
             }
         return numero;
     }
+    public String SoloNumstr(String cadena){
+        String men=cadena;
+        if (cadena == null || !cadena.matches("^[0-9]+$")) {
+            System.out.println("Caracter invalido.");
+            System.out.println("Ingrese un valor valido.");
+            men = sc.next();
+            SoloNumstr(men);
+        }
+      return men;
+    }
+    public String SoloString(String cadena){
+        String men=cadena;
+        if (cadena == null || !cadena.matches("^[a-z-A-Z]+$")) {
+            System.out.println("Caracter invalido.");
+            System.out.println("Ingrese un valor valido.");
+            men = sc.next();
+            SoloString(men);
+        }
+      return men;
+    }
+    public int SoloInt(String cadena) {
+    if (cadena.matches("^-?\\d+$")) {
+        return Integer.parseInt(cadena);
+    }
+    System.out.println("Caracter invalido.");
+    System.out.println("Ingrese un valor valido.");
+    String nuevo = sc.next();
+
+    return SoloInt(nuevo);
+    }
+    public Float SoloFloat(String cadena) {
+    if (cadena.matches("^-?\\d*(\\.\\d+)?$")) {
+        return Float.parseFloat(cadena);
+    }
+    System.out.println("Caracter invalido.");
+    System.out.println("Ingrese un valor valido.");
+    String nuevo = sc.next();
+
+    return SoloFloat(nuevo);
+    }
 }
