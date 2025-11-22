@@ -8,7 +8,7 @@ public class vectores {
     public LinkedList<modelo.tablet> vector_tableta = new LinkedList<>();
     public LinkedList<modelo.portatil> vector_portatil = new LinkedList<>();
     public Scanner sc = new Scanner(System.in);
-    public  validaciones valid = new validaciones();
+    public validaciones valid = new validaciones();
     
     public void LlenadoVectores(){
         int opt,con;
@@ -27,7 +27,7 @@ public class vectores {
                 case 4 -> vector_portatil.add(portatil());
             }
             System.out.println("Desea seguir llenando vectores?\n1.si y 2.no");
-            con = sc.nextInt();
+            con = valid.ValidarEnteroRngProc(sc);
             if (con == 2) {
                 band = false;
             }
@@ -73,6 +73,9 @@ public class vectores {
     System.out.println("Ingrese un numero telefonico.");
     String telefono = sc.next();
     o.setTelefono(valid.SoloNumstr(telefono));
+    System.out.println("Ingrese la cc o ti");
+    String cedula = sc.next();
+    o.setCedula(valid.SoloNumstr(cedula));
     System.out.println("Ingrese la modalidad de estudio \n[virtual-presencial]");
     String  modalidad= sc.next();
     o.setModalidad(valid.SoloString(modalidad));

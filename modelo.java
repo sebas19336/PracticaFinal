@@ -4,12 +4,17 @@ public class modelo{
         private String nombre;                                    
         private String apellido;
         private String telefono;
+        private String equipoPrestado;
 
         public estudiante() {
         }
 
-        
-
+        public String getEquipoPrestado() { 
+            return equipoPrestado; 
+        }
+        public void setEquipoPrestado(String equipoPrestado) { 
+            this.equipoPrestado = equipoPrestado; 
+        }
 
         public String getCedula() {
             return cedula;
@@ -35,6 +40,7 @@ public class modelo{
         public void setTelefono(String telefono) {
             this.telefono = telefono;
         }
+        
     }
 
 
@@ -108,11 +114,16 @@ public class modelo{
         private String Marca;
         private Float Tamaño;
         private Float Precio;
-
+        private boolean prestado = false;
         public equipo_electr() {
         }
 
-       
+        public boolean isPrestado() { 
+            return prestado; 
+        }
+        public void setPrestado(boolean prestado) { 
+            this.prestado = prestado; 
+        }
 
         public String getSerial() {
             return Serial;
@@ -164,7 +175,7 @@ public class modelo{
         }
         public void setAlmacen(int almacen) {
             Almacen = almacen;
-        }
+        }    
     }
     public class portatil extends equipo_electr{
         private String Procesador;
@@ -188,6 +199,7 @@ public class modelo{
         public void setSysOp(String sysOp) {
             this.sysOp = sysOp;
         }
+
         
     }
 }
